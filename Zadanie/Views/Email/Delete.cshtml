@@ -1,0 +1,43 @@
+﻿@model Models.RefModels.Email
+
+@{
+    ViewBag.Title = "Usuwanie";
+}
+
+<div style="font-family:Arial">
+    <h2>Usuwanie adresu email klienta</h2>
+
+    <h3>Czy na pewno chcesz usunąć ten adres email?</h3>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Dane klienta
+            </dt>
+
+            <dd>
+                @Html.Raw(ViewBag.CustomerData)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EmailContent)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmailContent)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Usuń" class="btn btn-danger" /> |
+                @Html.ActionLink("Wróć", "Details", "Customer", new { id = Model.Customer.ID }, null)
+            </div>
+        }
+    </div>
+</div>

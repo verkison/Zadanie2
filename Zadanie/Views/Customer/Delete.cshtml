@@ -1,0 +1,58 @@
+﻿@model Models.Customer
+
+@{
+    ViewBag.Title = "Usuwanie";
+}
+
+<div style="font-family:Arial">
+    <h2>Usuwanie klienta</h2>
+
+    <h3>Czy na pewno chcesz usunąć klienta?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CustomerStatus.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CustomerStatus.Status)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions">
+                <input type="submit" name="Delete" value="Usuń" class="btn btn-danger" /> |
+                @Html.ActionLink("Wróć do listy", "Index")
+            </div>
+        }
+    </div>
+</div>
