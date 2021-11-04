@@ -176,7 +176,7 @@ namespace Controllers
             ViewBag.MailTo = mailTo;
 
             EmailToSend ets = new EmailToSend();
-            ets.EmailTo = mailTo;
+            ets.EmailReceiver = mailTo;
 
             ViewBag.CustomerID = customerID;
 
@@ -186,20 +186,20 @@ namespace Controllers
         [HttpPost, ActionName("SendingEmail")]
         public ActionResult SendingEmailOnPost(EmailToSend ets)
         {
-            HttpClient hc = new HttpClient();
-            hc.BaseAddress = new Uri("https://localhost:44389/api/EmailAPI");
-
-            var consumewebapi = hc.PostAsJsonAsync("EmailAPI", ets);
-
-            consumewebapi.Wait();
-
-            var sendEmail = consumewebapi.Result;
-            if (sendEmail.IsSuccessStatusCode)
+            using (HttpClient hc = new HttpClient())
             {
-                ViewBag.message = "Email został wysłany";
+                hc.BaseAddress = new Uri("https://localhost:44389/api/EmailApi");
+
+                var consumewebapi = hc.PostAsJsonAsync("EmailAPI", ets);
+
+                consumewebapi.Wait();
+
+                var sendEmail = consumewebapi.Result;
+                if (sendEmail.IsSuccessStatusCode)
+                    ViewBag.message = "Email został wysłany";
+                else
+                    ViewBag.message = sendEmail.ReasonPhrase;
             }
-            else
-                ViewBag.message = sendEmail.ReasonPhrase;
 
             return View();
         }

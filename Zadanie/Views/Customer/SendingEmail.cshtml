@@ -66,7 +66,7 @@
                     <label>Odbiorca</label>
                 </div>
                 <div class="col-75">
-                    @Html.TextBoxFor(model => model.EmailTo, new { @readonly = "readonly" })
+                    @Html.TextBoxFor(model => model.EmailReceiver, new { @readonly = "readonly" })
                 </div>
             </div>
             <div class="row">
@@ -85,7 +85,7 @@
                     @Html.TextAreaFor(model => model.EmailMessage, new { rows = "13", cols = "25", @placeholder = "Twoja wiadomość..." })
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="padding: 0px 0px 0px 15px ">
                 <input type="submit" value="Wyślij">
             </div>
         </form>

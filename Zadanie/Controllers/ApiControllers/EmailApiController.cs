@@ -13,7 +13,7 @@ namespace Zadanie.Controllers.ApiControllers
             using (MailMessage mail = new MailMessage())
             {
                 mail.From = new MailAddress("testmail.eg2137@gmail.com");
-                mail.To.Add(model.EmailTo);
+                mail.To.Add(model.EmailReceiver);
                 mail.Subject = model.EmailSubject;
                 mail.Body = model.EmailMessage;
                 mail.IsBodyHtml = false;

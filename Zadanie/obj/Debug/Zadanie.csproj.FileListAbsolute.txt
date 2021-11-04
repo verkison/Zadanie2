@@ -179,3 +179,4 @@ C:\Users\Verki\Pulpit\Programowanie\visual\c#\web\Projekty MVC\Zadanie\Zadanie\o
 C:\Users\Verki\Pulpit\Programowanie\visual\c#\web\Projekty MVC\Zadanie\Zadanie\obj\Debug\Zadanie.csproj.CopyComplete
 C:\Users\Verki\Pulpit\Programowanie\visual\c#\web\Projekty MVC\Zadanie\Zadanie\obj\Debug\Zadanie.dll
 C:\Users\Verki\Pulpit\Programowanie\visual\c#\web\Projekty MVC\Zadanie\Zadanie\obj\Debug\Zadanie.pdb
+C:\Users\Verki\Pulpit\Programowanie\visual\c#\web\Projekty MVC\Zadanie\Zadanie\obj\Debug\Zadanie.csproj.AssemblyReference.cache
